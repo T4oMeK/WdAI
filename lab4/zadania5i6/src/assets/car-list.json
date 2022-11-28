@@ -1,0 +1,29 @@
+{
+    "Audi": {
+        "A3": ["White", "Black", "Silver", "Blue", "Red", "Violet"],
+        "S6": ["Grey", "Black", "White", "Blue"],
+        "RS6": ["Grey", "Black", "White", "Blue", "Red"]
+    },
+
+    "Kia": {
+        "Cee'd": ["White", "Black", "Silver", "Blue", "Red", "Yellow"],
+        "Optima": ["White", "Black", "Silver", "Blue", "Red"],
+        "Soul": ["White", "Black", "Silver", "Blue", "Red"]
+    },
+
+    "Seat": {
+        "Ibiza" : ["White", "Black", "Silver", "Blue", "Red"],
+        "Leon": ["White", "Black", "Silver", "Blue", "Red"]
+    },
+
+    "Ford": {
+        "Focus": ["White", "Black", "Silver", "Blue", "Red", "Yellow"],
+        "Kuga": ["White", "Black", "Silver", "Blue", "Red"]
+    },
+
+    "Chevrolet": {
+        "Tahoe": ["White", "Black", "Silver", "Red"],
+        "Equinox": ["White", "Black", "Gray", "Blue", "Red"],
+        "Cruze": ["White", "Black", "Silver", "Blue", "Grey"]
+    }
+}

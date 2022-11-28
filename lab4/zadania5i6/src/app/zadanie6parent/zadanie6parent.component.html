@@ -1,0 +1,6 @@
+<div id="parent">
+    <div id="explanation-container" [innerHTML]="htmlFromChild">
+        
+    </div>
+    <app-zadanie6child (buttonClicked)="parentEventHandler($event)"></app-zadanie6child>
+</div>

@@ -1,0 +1,30 @@
+<mat-form-field *ngIf="showBrand" appearance="fill">
+    <mat-label>Brand</mat-label>
+    <mat-select [(ngModel)]="selectedBrand" (ngModelChange)="chosenBrand()">
+      <mat-option *ngFor="let brand of cars | keyvalue" [value]="brand.key">
+        {{brand.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field *ngIf="showModels" appearance="fill">
+    <mat-label>Model</mat-label>
+    <mat-select [(ngModel)]="selectedModel" (ngModelChange)="chosenModel()">
+      <mat-option *ngFor="let model of cars[selectedBrand] | keyvalue" [value]="model.key">
+        {{model.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field *ngIf="showColors" appearance="fill">
+    <mat-label>Color</mat-label>
+    <mat-select [(ngModel)]="selectedColor" (ngModelChange)="chosenColor()">
+      <mat-option *ngFor="let color of colorChoice" [value]="color">
+        {{color}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <p>
+    Selected car: <span *ngIf="showCar">{{selectedBrand + " " + selectedModel + " " + selectedColor}}</span>
+  </p>

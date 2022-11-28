@@ -1,0 +1,7 @@
+<div class="star-container">
+    <button mat-icon-button color="accent" *ngFor="let rating of ratingArray; index as i" [id]="'star_'+i" (click)="ratingEvent(i + 1)">
+        <mat-icon>
+            {{ starStatus(i) }}
+        </mat-icon>
+    </button>
+</div>
