@@ -1,0 +1,46 @@
+.table {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    width: 100%;
+    color: white;
+    background-color: skyblue;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+td {
+    text-align: center;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+tr {
+    border: 1px solid skyblue;
+    height: 4em;
+}
+
+table {
+    width: 100%;
+    border: 5px solid skyblue;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 18px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.suma {
+    font-size: 25px;
+}

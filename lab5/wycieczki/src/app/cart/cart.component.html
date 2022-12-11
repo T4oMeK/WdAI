@@ -1,0 +1,32 @@
+<div class="table">
+    <h1>
+        Koszyk
+    </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Wycieczka</th>
+                <th>Kraj</th>
+                <th>Ilość</th>
+                <th>Cena</th>
+                <th>Sumaryczna cena</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let trip of cart">
+                <td>{{ trip.name }}</td>
+                <td>{{ trip.country }}</td>
+                <td>{{ trip.spots }}</td>
+                <td>{{ trip.price }}zł</td>
+                <td>{{ trip.spots * trip.price }}zł</td>
+                <td><button (click)="buy(trip)">Kup</button></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="suma" colspan="5"><strong>Suma:</strong> {{ sum() }}zł</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

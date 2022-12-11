@@ -1,0 +1,35 @@
+<div class="purchase-details">
+    <h1 [ngStyle]="{'background-color': getSpots(trips) > 10 ? 'lightgreen' : 'red'}">
+        Ilość zarezerwowanych miejsc: {{getSpots(trips)}}
+    </h1>
+</div>
+<app-trip-filter (emitFilter)="filterReceiver($event)" [trips]="trips"></app-trip-filter>
+<div class="trips" *ngIf="trips != []">
+    <div class="trip" [ngClass]="{
+        'most-expensive': trip.price == getMaxPriceTrip(trips, filter).price,
+        'least-expensive': trip.price == getMinPriceTrip(trips, filter).price
+    }" *ngFor="let trip of trips | filterTrips:getFilter()" [ngStyle]="{'background-color': trip.maxSpots - trip.spots <= 3 ? (trip.maxSpots - trip.spots == 0 ? 'red' : 'orange') : 'white'}">
+        <div class="info">
+            <a routerLink="/wycieczki/{{trip.id}}"><img src="{{trip.image[0]}}" alt="{{trip.name}}"></a>
+            <h2>{{trip.name | uppercase}}</h2>
+            <p class="country">Kraj: {{trip.country | uppercase}}</p>
+            <p class="desc">{{trip.description}}</p>
+            <p class="time">{{trip.startDate}}-{{trip.endDate}}</p>
+        </div>
+        <div class="bottom">
+            <div class="bottom-info">
+                <span class="price">{{trip.price}}{{trip.currency}}</span>
+                <div class="buttons">
+                    <div [ngStyle]="{'visibility': trip.spots == trip.maxSpots ? 'hidden' : 'visible'}" class="add btn" (click)="addClick(trip)">
+                        ➕
+                    </div>
+                    <div class="remove btn" (click)="removeClick(trip)">
+                        ➖
+                    </div>
+                </div>
+                <p class="spots-info">Ilość: {{trip.spots}}</p>
+            </div>
+            <img class="delete-button" src="../../assets/icons/trash-can-regular.svg" (click)="deleteTrip(trip)">
+        </div>
+    </div>
+</div>

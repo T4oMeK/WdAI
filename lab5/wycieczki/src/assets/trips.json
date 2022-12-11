@@ -1,0 +1,114 @@
+{
+    "trips": [
+        {
+            "id": 1,
+            "name": "Norweskie fiordy",
+            "country": "Norwegia",
+            "start-date": "15.08.2023",
+            "end-date": "23.08.2023",
+            "price": 3897,
+            "max-spots": 18,
+            "description": "Zachwyć się pięknem norweskich fiordów",
+            "img": "assets/img/norwegia.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Greckie wakacje",
+            "country": "Grecja",
+            "start-date": "22.07.2023",
+            "end-date": "30.07.2023",
+            "price": 2774,
+            "max-spots": 24,
+            "description": "Skosztuj greckiej kuchnij i poznaj tamtejsze zabytki",
+            "img": "assets/img/grecja1.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Zabytki i plaże Krety",
+            "country": "Grecja",
+            "start-date": "13.06.2023",
+            "end-date": "24.06.2023",
+            "price": 4629,
+            "max-spots": 10,
+            "description": "Poznaj zabytki i plaże największej wyspy w Grecji",
+            "img": "assets/img/grecja2.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Barwy Katalonii",
+            "country": "Hiszpania",
+            "start-date": "28.05.2023",
+            "end-date": "05.06.2023",
+            "price": 3465,
+            "max-spots": 15,
+            "description": "Odwiedź najważniejsze miejsca Katalonii",
+            "img": "assets/img/hiszpania1.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Niuanse Andaluzji",
+            "country": "Hiszpania",
+            "start-date": "30.04.2023",
+            "end-date": "10.05.2023",
+            "price": 4177,
+            "max-spots": 6,
+            "description": "Odkryj ciekawe miejsca południowego wybrzeża Hiszpanii",
+            "img": "assets/img/hiszpania2.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Naturalne piękno Kanady",
+            "country": "Kanada",
+            "start-date": "22.08.2023",
+            "end-date": "30.08.2023",
+            "price": 14123,
+            "max-spots": 19,
+            "description": "Ciesz się cudami przyrody zachodniej Kanady",
+            "img": "assets/img/kanada.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Maltańskie wyspy",
+            "country": "Malta",
+            "start-date": "15.03.2023",
+            "end-date": "23.03.2023",
+            "price": 3113,
+            "max-spots": 4,
+            "description": "Poczuj klimat maltańskich wysp",
+            "img": "assets/img/malta.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Góry Nepalu",
+            "country": "Nepal",
+            "start-date": "02.03.2023",
+            "end-date": "12.03.2023",
+            "price": 11034,
+            "max-spots": 2,
+            "description": "Podziwiaj wysokogórską scenerię Himalajów",
+            "img": "assets/img/nepal.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Na południe od równika",
+            "country": "Australia",
+            "start-date": "20.02.2023",
+            "end-date": "04.03.2023",
+            "price": 12867,
+            "max-spots": 8,
+            "description": "Rozkoszuj się zachwycającymi krajobrazami Australii",
+            "img": "assets/img/australia.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Kraina wina",
+            "country": "Francja",
+            "start-date": "06.08.2023",
+            "end-date": "15.08.2023",
+            "price": 3890,
+            "max-spots": 13,
+            "description": "Zasmakuj widoków i historii Burgundii",
+            "img": "assets/img/francja.jpg"
+        }
+    ]
+}

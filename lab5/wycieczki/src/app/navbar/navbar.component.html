@@ -1,0 +1,12 @@
+<div class="top">
+    <div class="notify" *ngIf="isTripComing()">
+        <p>Drogi użytkowniku, któraś z twoich wycieczek za niedługo się odbędzie!</p>
+    </div>
+    <nav>
+        <a routerLink="/">Strona główna</a>
+        <a routerLink="/wycieczki">Wycieczki</a>
+        <a routerLink="/historia-wycieczek">Historia wycieczek</a>
+        <a routerLink="/dodaj-wycieczke">Dodaj wycieczkę</a>
+        <a routerLink="/koszyk">Koszyk ({{ getCartQuantity() }}): {{ getCartValue() }}zł</a>
+    </nav>
+</div>

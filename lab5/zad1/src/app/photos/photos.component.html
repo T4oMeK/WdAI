@@ -1,0 +1,9 @@
+<h1>Photos</h1>
+<p>Showing only first 100 of 500 photos</p>
+<div class="photos" *ngFor="let photo of photos">
+    <div class="photo" *ngIf="photo.id <= 100">
+        <h2>AlbumID: {{photo.albumId}}, PhotoID: {{photo.id}}</h2>
+        <p>{{photo.title}}</p>
+        <a routerLink="/photos/{{photo.id}}"><img src={{photo.thumbnailUrl}}></a>
+    </div>
+</div>

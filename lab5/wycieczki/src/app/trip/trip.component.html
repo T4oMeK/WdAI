@@ -1,0 +1,66 @@
+<div class="view">
+    <button routerLink="/wycieczki">Powróć do listy wycieczek</button>
+
+    <div class="trip">
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let image of trip.image">
+                <img [src]="image">
+            </ng-template>
+        </ngb-carousel>
+        <div class="bottom">
+            <h1>{{ trip.name | uppercase }}</h1>
+            <h2>Kraj: {{ trip.country | uppercase }}</h2>
+            <article class="description">{{ trip.description }}</article>
+            <div class="buying">
+                <span class="price">{{trip.price}}{{trip.currency}}</span>
+                <div class="buttons">
+                    <div [ngStyle]="{'visibility': trip.spots == trip.maxSpots ? 'hidden' : 'visible'}" class="add btn" (click)="addClick(trip)">
+                        ➕
+                    </div>
+                    <div class="remove btn" (click)="removeClick(trip)">
+                        ➖
+                    </div>
+                </div>
+                <p class="spots-info">Ilość: {{trip.spots}}</p>
+            </div>
+            <div class="rating">
+                <app-trip-rating [rating]="displayTripRating(trip)" (rated)="ratingEvent(trip, $event)"></app-trip-rating>
+                <span>{{displayTripRating(trip) | number:'1.1-2'}} ({{trip.totalRatings}})</span>
+            </div>
+        </div>
+    </div>
+    <div class="reviews">
+        <h1>RECENZJE</h1>
+        <div class="review" *ngFor="let review of reviews">
+            <h1>{{ review.tripName }}</h1>
+            <h2>{{ review.nickname }}</h2>
+            <h3 *ngIf="review.date">Data odbycia wycieczki: {{ review.date }}</h3>
+            <article>{{ review.review }}</article>
+        </div>
+    </div>
+    <form [formGroup]="reviewForm">
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Nick</mat-label>
+            <input matInput formControlName="nickname">
+            <mat-error *ngIf="reviewForm.controls.nickname.invalid">Musisz podać nick</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Nazwa wycieczki</mat-label>
+            <input matInput formControlName="tripName">
+            <mat-error *ngIf="reviewForm.controls.tripName.invalid">Musisz podać nazwę wycieczki</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Data odbycia wycieczki (opcjonalne)</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Recenzja</mat-label>
+            <textarea matInput formControlName="review"></textarea>
+            <mat-error *ngIf="reviewForm.controls.review.invalid">Recenzja musi mieć od 50 do 500 znaków</mat-error>
+        </mat-form-field>
+
+        <button class="submit" (click)="submitForm()">Opublikuj recenzję</button>
+    </form>
+</div>

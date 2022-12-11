@@ -1,0 +1,37 @@
+<div class="filter-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Wybierz państwa</mat-label>
+        <mat-select [(ngModel)]="countriesArray" multiple (ngModelChange)="changedFilter()">
+            <mat-option *ngFor="let country of countries()" [value]="country">
+                {{ country }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearence="fill">
+        <mat-label>Data rozpoczęcia wycieczki</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate [(ngModel)]="startDate" (ngModelChange)="changedFilter()">
+            <input matEndDate [(ngModel)]="endDate" (ngModelChange)="changedFilter()">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <div class="slider">
+        <label>Cena:</label>
+        <mat-slider min="{{getMinPrice(trips)}}" max="{{getMaxPrice(trips)}}" step="1" [discrete]="true">
+            <input matSliderStartThumb [(ngModel)]="minPrice" (ngModelChange)="changedFilter()">
+            <input matSliderEndThumb [(ngModel)]="maxPrice" value="{{getMaxPrice(trips)}}" (ngModelChange)="changedFilter()">
+        </mat-slider>
+    </div>
+    <mat-form-field appearance="fill">
+        <mat-label>Ocena</mat-label>
+        <mat-select [(ngModel)]="rating" (ngModelChange)="changedFilter()">
+            <mat-option value="0">Brak filtra</mat-option>
+            <mat-option value="1">>=1 gwiazdka</mat-option>
+            <mat-option value="2">>=2 gwiazdki</mat-option>
+            <mat-option value="3">>=3 gwiazdki</mat-option>
+            <mat-option value="4">>=4 gwiazdki</mat-option>
+            <mat-option value="5">5 gwiazdek</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

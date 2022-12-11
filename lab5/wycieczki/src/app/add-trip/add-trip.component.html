@@ -1,0 +1,42 @@
+<div class="form-container">
+    <h1>Dodaj wycieczkę</h1>
+    <form [formGroup]="addTripForm">
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Nazwa wycieczki</mat-label>
+            <input matInput formControlName="tripName">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Kraj</mat-label>
+            <input matInput formControlName="tripCountry">
+        </mat-form-field>
+        <mat-form-field class="field" appearence="fill">
+            <mat-label>Wprowadź czas wycieczki</mat-label>
+            <mat-date-range-input [rangePicker]="picker" [min]="today">
+                <input matStartDate formControlName="tripStartDate">
+                <input matEndDate formControlName="tripEndDate">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Cena</mat-label>
+            <input matInput formControlName="tripPrice">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Ilość miejsc</mat-label>
+            <input matInput formControlName="tripMaxSpots">
+        </mat-form-field>
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Opis</mat-label>
+            <textarea matInput formControlName="tripDescription"></textarea>
+        </mat-form-field>
+        <mat-form-field class="field" appearance="fill">
+            <mat-label>Link do zdjęcia</mat-label>
+            <input matInput formControlName="tripImage">
+        </mat-form-field>
+
+        <button (click)="submitForm()">Dodaj</button>
+        <p class="wrong" *ngIf="wrong">Wprowadź prawidłowe dane</p>
+        <p class="added" *ngIf="correct">Dodano wycieczkę</p>
+    </form>
+</div>

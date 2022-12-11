@@ -1,0 +1,40 @@
+<div class="table">
+    <mat-form-field appearance="fill">
+        <mat-label>Wybierz status</mat-label>
+        <mat-select [(ngModel)]="selectedStatus">
+            <mat-option [value]="">
+                wszystkie
+            </mat-option>
+            <mat-option *ngFor="let status of statuses" [value]="status">
+                {{ status }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <h1>
+        Historia wycieczek
+    </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Wycieczka</th>
+                <th>Rozpoczęcie</th>
+                <th>Zakończenie</th>
+                <th>Kraj</th>
+                <th>Ilość</th>
+                <th>Status</th>
+                <th>Zapłacono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let trip of getFilteredHistory(selectedStatus)">
+                <td>{{ trip.name }}</td>
+                <td>{{ trip.startDate }}</td>
+                <td>{{ trip.endDate }}</td>
+                <td>{{ trip.country }}</td>
+                <td>{{ trip.spots }}</td>
+                <td>{{ trip.status }}</td>
+                <td>{{ trip.spots * trip.price }}zł</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
